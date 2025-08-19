@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark theme as default with gold accents */
+    --background: 220 20% 8%;
+    --foreground: 50 50% 95%;
+
+    --card: 220 15% 12%;
+    --card-foreground: 50 50% 95%;
+
+    --popover: 220 15% 12%;
+    --popover-foreground: 50 50% 95%;
+
+    --primary: 45 90% 60%; /* Gold/Yellow */
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 50 50% 95%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 50 100% 70%; /* Bright Gold */
+    --accent-foreground: 220 20% 8%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 50 50% 95%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 45 90% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 50 50% 95%;
+    --sidebar-primary: 45 90% 60%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 50 100% 70%;
+    --sidebar-accent-foreground: 220 20% 8%;
+    --sidebar-border: 220 15% 20%;
+    --sidebar-ring: 45 90% 60%;
+  }
+
+  .dark {
+    /* Even darker theme variant */
+    --background: 220 25% 5%;
+    --foreground: 50 50% 98%;
+
+    --card: 220 20% 8%;
+    --card-foreground: 50 50% 98%;
+
+    --popover: 220 20% 8%;
+    --popover-foreground: 50 50% 98%;
+
+    --primary: 45 95% 65%;
+    --primary-foreground: 220 25% 5%;
+
+    --secondary: 220 20% 10%;
+    --secondary-foreground: 50 50% 98%;
+
+    --muted: 220 20% 10%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 50 100% 75%;
+    --accent-foreground: 220 25% 5%;
+
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 50 50% 98%;
+
+    --border: 220 20% 15%;
+    --input: 220 20% 15%;
+    --ring: 45 95% 65%;
+    
+    --sidebar-background: 220 25% 5%;
+    --sidebar-foreground: 50 50% 98%;
+    --sidebar-primary: 45 95% 65%;
+    --sidebar-primary-foreground: 220 25% 5%;
+    --sidebar-accent: 50 100% 75%;
+    --sidebar-accent-foreground: 220 25% 5%;
+    --sidebar-border: 220 20% 15%;
+    --sidebar-ring: 45 95% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,h2,h3,h4 { @apply font-playfair; }
+}
+
+@layer utilities {
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  .hover-scale { @apply transition-transform duration-200 hover:scale-105; }
+}
